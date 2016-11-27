@@ -1,0 +1,14 @@
+<div class="header">
+  <h1 class="title">Guessit</h1>
+  <h2 class="subtitle">Extracts as much information as possible from a video filename</h2>
+</div>
+
+<div class="container content">
+  <guessit-input [debounce]="2000" (result)="result=$event"></guessit-input>
+
+  <div class="result">{{result|json}}</div>
+</div>
+
+<div class="footer">
+
+</div>
