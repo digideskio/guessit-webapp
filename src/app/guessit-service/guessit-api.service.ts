@@ -11,6 +11,6 @@ export class GuessitApi {
     let params: URLSearchParams = new URLSearchParams();
     params.set('filename', filename);
 
-    return this.http.get('http://localhost:5000', {search: params}).map((r) => r.json());
+    return this.http.get('http://v2.api.guessit.io', {search: params}).map((r) => r.json());
   }
 }
