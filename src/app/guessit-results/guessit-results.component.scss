@@ -1,0 +1,20 @@
+.list-group-item {
+  display: inherit
+}
+
+.panel-heading h3 {
+  margin-top: 4px;
+  margin-bottom: 2px;
+}
+
+table {
+  tbody > tr > td.name {
+    width: 1px;
+    text-align: right;
+  }
+
+  thead > tr > th.name {
+    width: 1px;
+    text-align: right;
+  }
+}

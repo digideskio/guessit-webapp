@@ -5,8 +5,7 @@
 
 <div class="container content">
   <guessit-input [debounce]="2000" (result)="result=$event"></guessit-input>
-
-  <div class="result">{{result|json}}</div>
+  <guessit-results [result]="result"></guessit-results>
 </div>
 
 <div class="footer">

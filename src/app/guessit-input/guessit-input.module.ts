@@ -28,7 +28,6 @@ export class GuessitInputComponent {
    * @param filename
    */
   handleFilename(filename: string) {
-    console.log(filename);
     this.filenameSubject.next(filename);
   }
 }

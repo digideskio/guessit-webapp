@@ -6,13 +6,15 @@ import {Ng2BootstrapConfig, Ng2BootstrapTheme} from "ng2-bootstrap/ng2-bootstrap
 import {AppComponent} from "./app.component";
 import {GuessitInputComponent} from "./guessit-input/guessit-input.module";
 import {GuessitApi} from "./guessit-service/guessit-api.service";
+import {GuessitResultsComponent} from "./guessit-results/guessit-results.module";
 
 Ng2BootstrapConfig.theme = Ng2BootstrapTheme.BS3;
 
 @NgModule({
   declarations: [
     AppComponent,
-    GuessitInputComponent
+    GuessitInputComponent,
+    GuessitResultsComponent
   ],
   imports: [
     BrowserModule,

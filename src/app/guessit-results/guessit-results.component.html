@@ -1,0 +1,19 @@
+<div class="panel panel-default guessit-results" *ngIf="result">
+  <div class="panel-heading"><h3>Results</h3></div>
+  <div class="panel-body">
+    <table class="table table-condensed table-hover">
+      <thead>
+      <tr>
+        <th class="name">Name</th>
+        <th class="value">Value</th>
+      </tr>
+      </thead>
+      <tbody>
+      <tr class="property" *ngFor="let property of result?.properties">
+        <td class="name"><span class="badge">{{property.name}}</span></td>
+        <td class="value">{{property.value}}</td>
+      </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
