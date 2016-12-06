@@ -1,4 +1,4 @@
 export const environment = {
   production: true,
-  guessitApiUrl: 'http://v2.api.guessit.io'
+  guessitApiUrl: 'http://localhost:5000'
 };

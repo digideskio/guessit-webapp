@@ -1,6 +1,7 @@
 import {Injectable} from "@angular/core";
 import {Http, URLSearchParams} from "@angular/http";
 import {isString} from "util";
+import {environment} from "../../environments/environment";
 
 export class GuessitPropertyValue {
   constructor(public name: string, public value: any) {
@@ -75,6 +76,6 @@ export class GuessitApi {
     let params: URLSearchParams = new URLSearchParams();
     params.set('filename', filename);
 
-    return this.http.get('http://v2.api.guessit.io', {search: params}).map((r) => GuessitResult.fromApiResponse(filename, r.json()));
+    return this.http.get(environment.guessitApiUrl, {search: params}).map((r) => GuessitResult.fromApiResponse(filename, r.json()));
   }
 }
