@@ -13,14 +13,31 @@ export class GuessitInputComponent {
 
   @Input() debounce: number = 500;
   @Output() result: EventEmitter<any> = new EventEmitter();
+  @Output() error: EventEmitter<any> = new EventEmitter();
+
+  private res: any;
+  private err: any;
 
   constructor(api: GuessitApi) {
     this.api = api;
-    this.filenameSubject.debounceTime(this.debounce).subscribe(this.executeQuery.bind(this))
+    this.filenameSubject.debounceTime(this.debounce).filter((filename) => !!filename).subscribe(this.executeQuery.bind(this));
+    this.filenameSubject.subscribe(() => {
+      this.result.emit(null);
+      this.error.emit(null);
+    });
+
+    // TODO: Is this the only way to bind component output EventEmitter into it's own component template ?
+    this.error.forEach((err) => {
+      this.err = err;
+    });
+
+    this.result.forEach((result) => {
+      this.res = result;
+    });
   }
 
   executeQuery(filename: string) {
-    this.api.search(filename).forEach((r) => this.result.emit(r));
+    this.api.search(filename).forEach((r) => this.result.emit(r)).catch((err) => this.error.emit(err));
   }
 
   /**

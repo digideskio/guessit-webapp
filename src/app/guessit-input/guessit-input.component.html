@@ -1,5 +1,7 @@
 <div class="guessit-input">
-  <div class="form-group form-group-lg">
-    <input [ngModel]="filename" (ngModelChange)="handleFilename($event)" class="form-control" type="text" placeholder="Enter a media filename or filepath" name="filename">
+  <div class="form-group form-group-lg" [ngClass]="{'has-error': !!err, 'has-success': !!res}">
+    <input [ngModel]="filename" (ngModelChange)="handleFilename($event)" class="form-control" type="text"
+           placeholder="Enter a media filename or filepath" name="filename">
+    <span class="help-block">{{ err }}</span>
   </div>
 </div>

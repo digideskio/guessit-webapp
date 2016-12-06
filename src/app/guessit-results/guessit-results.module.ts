@@ -14,7 +14,5 @@ export class GuessitPropertyResult {
 export class GuessitResultsComponent {
   @Input() result: GuessitResult;
 
-  setResult(result: any) {
-    console.log(result);
-  }
+
 }
